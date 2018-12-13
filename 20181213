@@ -1,0 +1,68 @@
+# 20181213
+
+
+指標變數
+(電腦由後往前執行)
+
+/* prog10_2, 指標變數的宣告 */
+#include <stdio.h> 
+#include <stdlib.h>
+int main(void)
+{
+   int *ptr,c=99,num=20,b=80;	/* 宣告變數num與指標變數ptr */
+
+   ptr=&num;			/* 將num的位址設給指標ptr存放 */
+   printf("num=%d, &num=%p\n",num,&num); 
+   printf("*ptr=%d, ptr=%p, &ptr=%p\n",*ptr,ptr,&ptr);  /* *ptr=值 ptr=num的位址 &ptr=位址*/ 
+   printf("b=%d, &b的位址=%p\n",b,&b);   /* b=值  &b=位址*/  
+   printf("c=%d, &c的位址=%p\n",c,&c);   /* c=值  &c=位址*/ 
+   system("pause");
+   return 0;
+}
+
+執行:
+num=20, &num=000000000062FE40
+*ptr=20, ptr=000000000062FE40, &ptr=000000000062FE48
+b=80, &b的位址=000000000062FE3C
+c=99, &c的位址=000000000062FE44
+請按任意鍵繼續 . . .
+
+
+/* prog10_2, 指標變數的宣告 */
+#include <stdio.h> 
+#include <stdlib.h>
+int main(void)
+{
+   int *ptr,c=99,num=20,b=80;	/* 宣告變數num與指標變數ptr */
+
+   ptr=&num;			/* 將num的位址設給指標ptr存放 */
+   printf("num=%d, &num=%p\n",num,&num); 
+   printf("*ptr=%d, ptr=%p, &ptr=%p\n",*ptr,ptr,&ptr);  /* *ptr=直 ptr=內容(num的位址) &ptr=位址*/ 
+   ptr=&b;
+   printf("b=%d, b的位址=&b=%p\n",b,&b); 
+   printf("*ptr=%d, ptr=%p, &ptr=%p\n",*ptr,ptr,&ptr);
+   ptr=&c;
+   printf("c=%d, c的位址=&c=%p\n",c,&c); 
+   printf("*ptr=%d, ptr=%p, &ptr=%p\n",*ptr,ptr,&ptr);
+   printf("b=%d, &b的位址=%p\n",b,&b);   /* b=直  &b=位址*/  
+   printf("c=%d, &c的位址=%p\n",c,&c);
+   system("pause");
+   return 0;
+   
+   
+   執行:
+   num=20, &num=000000000062FE40
+*ptr=20, ptr=000000000062FE40, &ptr=000000000062FE48
+b=80, b的位址=&b=000000000062FE3C
+*ptr=80, ptr=000000000062FE3C, &ptr=000000000062FE48
+c=99, c的位址=&c=000000000062FE44
+*ptr=99, ptr=000000000062FE44, &ptr=000000000062FE48
+b=80, &b的位址=000000000062FE3C
+c=99, &c的位址=000000000062FE44
+請按任意鍵繼續 . . .
+
+
+
+
+
+
